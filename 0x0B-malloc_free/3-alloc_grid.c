@@ -8,7 +8,7 @@
  * Return: returns a pointer of pointer or null
  */
 
-int **alloc_grid(int width, int height);
+int **alloc_grid(int width, int height)
 {
 	int i, j, a, b;
 	int *p;
