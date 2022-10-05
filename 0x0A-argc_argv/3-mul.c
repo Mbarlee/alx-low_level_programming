@@ -3,25 +3,22 @@
 #include "main.h"
 
 /**
- * main -> this is a function tp print its name
- * @argc: argc parameter
- * @argv: an array of a command listed
- * Return: 0 for success
+ * main - print product of two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: (0)
  */
 
 int main(int argc, char *argv[])
 {
-	int result, num1, num2;
-
-	if (argc != 3)
+	if (argc <= 2 || argc > 3)
 	{
-		printf("%s\n", Error);
+		printf("Error\n");
 		return (1);
 	}
-	num1 = atoi(argc[1]);
-	num2 = atoi(argv[2]);
-	result = num1 * num2;
-
-	printf("%d\n", result);
-	return (0);
+	else
+	{
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		return (0);
+	}
 }
