@@ -1,1 +1,1 @@
-Welcome to C language
+Welcome to C
