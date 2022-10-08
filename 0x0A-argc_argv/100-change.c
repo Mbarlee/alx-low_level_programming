@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -10,29 +10,43 @@
 
 int main(int argc, char *argv[])
 {
-	int num, j, result = 0;
-	int coins[] = {25, 10, 5, 2, 1};
+	int cents, change;
 
 	if (argc != 2)
 	{
-		printf("%s\n", "Error");
+		printf("Error\n");
 		return (1);
 	}
-
-	num = atoi(argv[1]);
-	if (num < 0)
+	cents = atoi(argv[1]);
+	if (cents < 0)
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 		return (0);
 	}
-	for (j = 0; j < 5 && num >= 0; j++)
+	if (cents % 25 >= 0)
 	{
-		while (num >= coins[j])
-		{
-			num -= coins[j];
-			result++;
-		}
+		change = cents / 25;
+		cents = cents % 25;
 	}
-	printf("%d\n", result);
+	if (cents % 10 >= 0)
+	{
+		change += cents / 10;
+		cents = cents % 10;
+	}
+	if (cents % 5 >= 0)
+	{
+		change += cents / 5;
+		cents = cents % 5;
+	}
+	if (cents % 2 >= 0)
+	{
+		change += cents / 2;
+		cents = cents % 2;
+	}
+	if (cents % 1 >= 0)
+	{
+		change += cents / 1;
+	}
+	printf("%d\n", change);
 	return (0);
 }
