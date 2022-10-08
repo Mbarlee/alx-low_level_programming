@@ -18,7 +18,7 @@ void _print(char *str, int l)
 	{
 		if (str[i] != '0')
 			j = 1;
-		if (j || i == l -1)
+		if (j || i == l - 1)
 			_putchar(str[i]);
 		i++;
 	}
@@ -31,7 +31,7 @@ void _print(char *str, int l)
  * mul - multiplies a char with astring and places the answer int dest
  * @n: char to multiply
  * @num: string to multiply
- * @num_index: last non NULL index of num 
+ * @num_index: last non NULL index of num
  * @dest: destination of multiplication
  * @dest_index: highest index to start addition
  *
@@ -42,7 +42,8 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 {
 	int j, k, mul, mulrem, add, addrem;
 	mulrem = addrem = 0;
-	for (j = num_index, k = dest_index; j>= 0; j--, k--)
+
+	for (j = num_index, k = dest_index; j >= 0; j--, k--)
 	{
 		mul = (n - '0') * (num[j] - '0') + mulrem;
 		mulrem = mul / 10;
@@ -50,7 +51,7 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 		addrem = add / 10;
 		dest[k] = add % 10 + '0';
 	}
-	for (addrem += mulrem; k>= 0 && addrem; k--)
+	for (addrem += mulrem; k >= 0 && addrem; k--)
 	{
 		add = (dest[k] - '0') + addrem;
 		addrem = add / 10;
@@ -70,7 +71,7 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
  * Return: 0 if digits, 1 if not
  */
 
-int check_for_digits(char &av)
+int check_for_digits(char & av)
 {
 	int i, j;
 
@@ -97,6 +98,7 @@ void init(char *str, init l)
 {
 	init i;
 	for (i = 0; i < l; i++)
+
 		str[i] = '0';
 	str[i] = '\0'
 }
@@ -115,7 +117,6 @@ int main(int argc, char argv[])
 	char *a;
 	char *t;
 	char e[] = "Error\n"
-	
 	if (argc != 3 || check_for_digts(argc))
 	{
 		for (ti = 0; e[ti]; ti++)
