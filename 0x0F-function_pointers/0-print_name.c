@@ -1,20 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
- * print_name - calls another function to peint a name
+ * print_name - prints a name.
+ * @name: pointer to name.
+ * @f: function pointer.
  *
- * @name:name to print
- * @f:function name
- *
- * Return:void
+ * Return: void.
  */
 
 void print_name(char *name, void (*f)(char *))
 {
-	if (f == NULL)
-	{
-		return;
-	}
-	(*f)(name);
+	if (name && f)
+		f(name);
 }
