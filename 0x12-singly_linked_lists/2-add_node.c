@@ -10,20 +10,20 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_mode;
+	list_t *new_node;
 	size_t n;
 
-	new_mode = malloc(sizeof(list_t));
-	if (new_mode == NULL)
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
 		return (NULL);
 
-	new_mode->str = strdup(atr);
+	new_node->str = strdup(atr);
 
 	for (n = 0; str[n]; n++)
 		;
-	new_mode->len = n;
-	new_mode->next = *head;
-	*head = new_mode;
+	new_node->len = n;
+	new_node->next = *head;
+	*head = new_node;
 
 	return (*head);
 }
