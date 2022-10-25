@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * print_numbers - prints numbers follwed by a nes line.
+ * print_numbers - prints numbers follwed by a new line.
  * @separator: string to be printed between numbers.
  * @n: number of integers passed to the function.
  *
