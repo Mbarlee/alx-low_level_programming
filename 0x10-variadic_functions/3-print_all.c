@@ -3,12 +3,11 @@
 #include <stdarg.h>
 
 /**
- * print_all - prints anything.
- * @format: list of all arguments passed to the function.
- * 
- * Return: void.
- */
-
+  *print_all - prints anything.
+  *@format: list of all arguments passed to the function.
+  *
+  *Return: void.
+  */
 void print_all(const char * const format, ...)
 {
 	unsigned int i;
@@ -25,17 +24,17 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%s%c", separator, va_args(args, int));
+				printf("%s%c", separator,  va_arg(args, int));
 				break;
 			case 'i':
-				printf("%s%d", separator, va_args(args, int));
+				printf("%s%d", separator, va_arg(args, int));
 				break;
 			case 'f':
-				printf("%s%f", separator, va_args(args, double));
+				printf("%s%f", separator, va_arg(args, double));
 				break;
 			case 's':
-				s = va_args(args, cahr *);
-				if ( s == NULL)
+				s = va_arg(args, char *);
+				if (s == NULL)
 					s = "(nil)";
 				printf("%s%s", separator, s);
 				break;
@@ -46,6 +45,7 @@ void print_all(const char * const format, ...)
 		separator = ", ";
 		i++;
 	}
+
 	printf("\n");
 	va_end(args);
 }
